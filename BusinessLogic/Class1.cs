@@ -8,5 +8,7 @@ namespace BusinessLogic
 {
     public class Class1
     {
+        // Comentarios de Clase
+
     }
 }
