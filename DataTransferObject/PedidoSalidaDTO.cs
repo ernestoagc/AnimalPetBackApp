@@ -25,6 +25,10 @@ namespace DataTransferObject
         [DataMember(IsRequired = false, EmitDefaultValue = false)]
         public string usuarioApellidoMaterno { get; set; }
 
+        [DataMember(IsRequired = false, EmitDefaultValue = false)]
+        public string actualizo { get; set; }
+
+
         [DataMember(IsRequired = true)]
         public string direccion { get; set; }
 

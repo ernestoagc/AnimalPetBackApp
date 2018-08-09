@@ -27,11 +27,11 @@ namespace wsVeterinaria
         List<PedidoSalidaDTO> getPedido(string usuario, string estado, string pedido);
 
         [OperationContract]
-        [WebInvoke(Method = "POST", UriTemplate = "/PedidoInsert", ResponseFormat = WebMessageFormat.Json)]
+        [WebInvoke(Method = "POST", UriTemplate = "PedidoInsert", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         PedidoSalidaDTO InsertPedido(PedidoEntradaDTO pPedidoEntradaDTO);
 
         [OperationContract]
-        [WebInvoke(Method = "POST", UriTemplate = "/EventoInsert", ResponseFormat = WebMessageFormat.Json)]
+        [WebInvoke(Method = "POST", UriTemplate = "EventoInsert", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         PedidoSalidaDTO InsertEvento(PedidoEntradaDTO pPedidoEntradaDTO);
 
     }

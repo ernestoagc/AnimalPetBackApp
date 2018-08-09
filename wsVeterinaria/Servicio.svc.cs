@@ -73,20 +73,35 @@ namespace wsVeterinaria
         public PedidoSalidaDTO InsertEvento(PedidoEntradaDTO pPedidoEntradaDTO)
         {
             PedidoBE pedidoBE = UtilFunction.getPedidoBE(pPedidoEntradaDTO);
-
+            List<PedidoServicioBE> listaPedidoServicioBE = new List<PedidoServicioBE>();
             foreach (ServicioDTO servicioDTO in pPedidoEntradaDTO.servicios) {
-                ServicioBE servicioBE = UtilFunction.getServicioBE(servicioDTO);
+                ServicioBE servicioBE = UtilFunction.getServicioBE(servicioDTO);                
+                PedidoServicioBE pedidoServicioBE = new PedidoServicioBE();
+                pedidoServicioBE.id = servicioDTO.idPedidoServicio;
+                pedidoServicioBE.idEstadoEvento = servicioDTO.idEstadoEvento;
+                listaPedidoServicioBE.Add(pedidoServicioBE);
 
             }
 
+
+           List<EventoBE> listaEvento= negocioBL.insertEvento(listaPedidoServicioBE);
+
             PedidoSalidaDTO pedidoSalidaDTO = new PedidoSalidaDTO();
+
+            if (listaEvento != null)
+            {
+                pedidoSalidaDTO.actualizo = "true";
+            }
+            else {
+                pedidoSalidaDTO.actualizo = "false";
+            }
             return pedidoSalidaDTO;
         }
 
         public PedidoSalidaDTO InsertPedido(PedidoEntradaDTO pPedidoEntradaDTO)
         {
             PedidoBE pedidoBE = UtilFunction.getPedidoBE(pPedidoEntradaDTO);
-
+            pedidoBE.fecha = DateTime.Now;
             List<PedidoServicioBE> listaPedidoServicioBE = new List<PedidoServicioBE>();
 
             if (pPedidoEntradaDTO.servicios != null) {

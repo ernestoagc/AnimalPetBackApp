@@ -10,6 +10,7 @@ namespace BusinessEntities
     {
         public int id { get; set; }
         public int idPedido { get; set; }
+        public int idEstadoEvento { get; set; }
         public int idServicio { get; set; }
         public decimal costo { get; set; }
 

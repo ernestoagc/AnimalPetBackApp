@@ -59,7 +59,7 @@ namespace Helper
             ServicioDTO servicioDTO = new ServicioDTO();
             servicioDTO.idServicio = pServicioBE.id;
             servicioDTO.costo = pServicioBE.costo;
-            servicioDTO.idEvento = pServicioBE.idEvento;
+            //servicioDTO.idEvento = pServicioBE.idEvento;
             servicioDTO.servicioCodigo = pServicioBE.codigo;
             servicioDTO.servicioNombre = pServicioBE.nombre;
             servicioDTO.estadoEventoCodigo = pServicioBE.estadoEventoCodigo;
@@ -76,7 +76,7 @@ namespace Helper
             pedidoBE.fecha = pPedidoEntradaDTO.fecha;
             pedidoBE.latitud = pPedidoEntradaDTO.latitud;
             pedidoBE.longitud = pPedidoEntradaDTO.longitud;
-            
+            pedidoBE.direccion = pPedidoEntradaDTO.direccion;
             //pedidoBE.servicios = new List<ServicioBE>();
             return pedidoBE;
         }

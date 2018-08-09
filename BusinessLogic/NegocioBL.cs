@@ -57,6 +57,7 @@ namespace BusinessLogic
 
                     eventoDA.insert(eventoBE);
                 }
+                transactionScope.Complete();
                 return pPedidoBE;
             }
          
@@ -81,16 +82,25 @@ namespace BusinessLogic
             
         }
 
-        public PedidoBE insertEvento(PedidoBE pPedidoBE) {
+        public List<EventoBE> insertEvento(List<PedidoServicioBE> pListaPedidoEvento) {
 
+            List<EventoBE> resultado = new List<EventoBE>();
+            using (TransactionScope transactionScope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions() { IsolationLevel = System.Transactions.IsolationLevel.RepeatableRead }))
+            {
+                foreach (PedidoServicioBE pedidoEvento in pListaPedidoEvento) {
+                    EventoBE eventoBE = new EventoBE();
+                    eventoBE.idPedidoServicio = pedidoEvento.id;
+                    eventoBE.estado = pedidoEvento.idEstadoEvento;
+                    eventoBE.fecha = DateTime.Now;
+                    eventoBE = eventoDA.insert(eventoBE);
+                    resultado.Add(eventoBE);
+                }
 
-            foreach (ServicioBE pedidoBE in pPedidoBE.servicios) {
+            }              
 
-            }
-
-            return pPedidoBE;
+            return resultado;
         }
 
         }
-    }
+    
 }

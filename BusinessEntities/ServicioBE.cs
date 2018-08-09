@@ -9,7 +9,7 @@ namespace BusinessEntities
     public class ServicioBE
     {
         public int id { get; set; }
-        public int idEvento { get; set; }
+        public int idEstadoEvento { get; set; }
         public int idPedido { get; set; }
         public decimal costo { get; set; }
         public string codigo { get; set; }

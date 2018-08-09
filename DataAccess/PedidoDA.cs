@@ -94,8 +94,7 @@ namespace DataAccess
                                                       costo=ser.COSTO,
                                                       codigo=ser.CODIGO     ,
                                                       fechaEvento = eve.FECHA,
-                                                      id=ser.ID,
-                                                      idEvento=eve.ID
+                                                      id=ser.ID
                                                       
 
                                                   });
