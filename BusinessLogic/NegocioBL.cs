@@ -30,6 +30,7 @@ namespace BusinessLogic
             }
         }
 
+        // Envio del Pedido al cliente
         public PedidoBE insert(PedidoBE pPedidoBE, List<PedidoServicioBE> pListaPedidoServicioBE) {
             List<ValorBE> listaEstadoEvento = valorDA.Get(new ValorBE.Criterio() { CODIGO = "PP" ,LISTA_CODIGO= "ESTADO_EVENTO" });
             List<ValorBE> listaEstadoPedido = valorDA.Get(new ValorBE.Criterio() { CODIGO = "EP_PENDIENTE", LISTA_CODIGO = "ESTADO_PEDIDO" });
