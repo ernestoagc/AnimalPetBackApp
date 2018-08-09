@@ -84,8 +84,8 @@ namespace DataAccess
 
                                 var ltsDetalle = (from elem in db.PEDIDO_SERVICIO
                                                   join ser in db.SERVICIO on elem.SERVICIO equals ser.ID
-                                                  join eve in db.EVENTO on elem.SERVICIO equals eve.ID
-                                                  where elem.PEDIDO == obj.id
+                                                  join eve in db.EVENTO on elem.ID equals eve.PEDIDO_SERVICIO
+                                                  where elem.PEDIDO.CompareTo(obj.id)==0
                                                   select new ServicioBE()
                                                   {
                                                       estadoEventoNombre =eve.VALOR.VALOR1,
@@ -94,8 +94,9 @@ namespace DataAccess
                                                       costo=ser.COSTO,
                                                       codigo=ser.CODIGO     ,
                                                       fechaEvento = eve.FECHA,
-                                                      id=ser.ID
-                                                      
+                                                      id=ser.ID,
+                                                      idPedidoServicio = eve.PEDIDO_SERVICIO
+
 
                                                   });
                                 if (ltsDetalle != null) {

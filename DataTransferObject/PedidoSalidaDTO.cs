@@ -13,7 +13,7 @@ namespace DataTransferObject
         [DataMember(IsRequired = true)]
         public int idPedido { get; set; }
 
-        [DataMember(IsRequired = true)]
+        [DataMember(IsRequired = false)]
         public string usuarioCodigo { get; set; }
 
         [DataMember(IsRequired = false,EmitDefaultValue =false)]
@@ -29,25 +29,25 @@ namespace DataTransferObject
         public string actualizo { get; set; }
 
 
-        [DataMember(IsRequired = true)]
+        [DataMember(IsRequired = false)]
         public string direccion { get; set; }
 
-        [DataMember(IsRequired = true)]
+        [DataMember(IsRequired = false)]
         public string comentario { get; set; }
 
-        [DataMember(IsRequired = true)]
+        [DataMember(IsRequired = false)]
         public string latitud { get; set; }
 
-        [DataMember(IsRequired = true)]
+        [DataMember(IsRequired = false)]
         public string longitud { get; set; }
 
-        [DataMember(IsRequired = true)]
+        [DataMember(IsRequired = false)]
         public string estadoCodigo { get; set; }
 
-        [DataMember(IsRequired = true)]
+        [DataMember(IsRequired = false)]
         public string estadoNombre { get; set; }
 
-        [DataMember(IsRequired = true)]
+        [DataMember(IsRequired = false)]
         public DateTime fecha { get; set; }
 
 

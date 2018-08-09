@@ -10,6 +10,9 @@ namespace DataTransferObject
     public class PedidoEntradaDTO
     {
         [DataMember]
+        public int idPedido { get; set; }
+
+        [DataMember]
         public int usuarioId { get; set; }
 
         [DataMember]

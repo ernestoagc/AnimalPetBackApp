@@ -48,7 +48,7 @@ namespace BusinessLogic
                 {
                     obj.idPedido = pPedidoBE.id;
                     PedidoServicioBE pedidoServicioBE = pedidoServicioDA.insert(obj);
-                    pedidoServicioBE = pedidoServicioDA.insert(obj);
+                   // pedidoServicioBE = pedidoServicioDA.insert(obj);
 
                     EventoBE eventoBE = new EventoBE();
                     eventoBE.idPedidoServicio = pedidoServicioBE.id;
@@ -95,7 +95,7 @@ namespace BusinessLogic
                     eventoBE = eventoDA.insert(eventoBE);
                     resultado.Add(eventoBE);
                 }
-
+                transactionScope.Complete();
             }              
 
             return resultado;

@@ -95,6 +95,7 @@ namespace wsVeterinaria
             else {
                 pedidoSalidaDTO.actualizo = "false";
             }
+            pedidoSalidaDTO.idPedido = pPedidoEntradaDTO.idPedido;
             return pedidoSalidaDTO;
         }
 
@@ -115,9 +116,25 @@ namespace wsVeterinaria
                 }
             }
 
-            negocioBL.insert(pedidoBE, listaPedidoServicioBE);
-
+            pedidoBE= negocioBL.insert(pedidoBE, listaPedidoServicioBE);
             PedidoSalidaDTO pedidoSalidaDTO = new PedidoSalidaDTO();
+            List<PedidoBE> listaPedido = negocioBL.get(new PedidoBE.Criterio() { ID_PEDIDO= pedidoBE.id.ToString(),OBTENER_SERVICIOS=true} );
+
+            if (listaPedido != null && listaPedido.Count > 0) {
+                PedidoBE pedidoAuxBE = listaPedido[0];
+                pedidoSalidaDTO = UtilFunction.getPedidoSalidaDTO(pedidoAuxBE);
+
+                List<ServicioDTO> listaServicioDTO = new List<ServicioDTO>();
+                foreach (ServicioBE servicioBE in pedidoAuxBE.servicios) {
+                    ServicioDTO servicioDTO = UtilFunction.getServicioDTO(servicioBE);
+                    listaServicioDTO.Add(servicioDTO);
+                }
+
+                pedidoSalidaDTO.servicios = listaServicioDTO;
+
+            }
+
+   
             return pedidoSalidaDTO;
         }
     }

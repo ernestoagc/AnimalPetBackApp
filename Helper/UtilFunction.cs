@@ -65,6 +65,7 @@ namespace Helper
             servicioDTO.estadoEventoCodigo = pServicioBE.estadoEventoCodigo;
             servicioDTO.estadoEventoNombre = pServicioBE.estadoEventoNombre;
             servicioDTO.fecha = pServicioBE.fechaEvento;
+            servicioDTO.idPedidoServicio = pServicioBE.idPedidoServicio;
             return servicioDTO;
         }
 

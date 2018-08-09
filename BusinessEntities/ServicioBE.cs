@@ -17,6 +17,7 @@ namespace BusinessEntities
         public DateTime? fechaEvento { get; set; }
         public string estadoEventoCodigo { get; set; }
         public string estadoEventoNombre { get; set; }
+        public int idPedidoServicio { get; set; }
 
         public class Criterio {
             public string CODIGO { get; set; }
