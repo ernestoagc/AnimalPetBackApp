@@ -30,5 +30,9 @@ namespace wsVeterinaria
         [WebInvoke(Method = "POST", UriTemplate = "/PedidoInsert", ResponseFormat = WebMessageFormat.Json)]
         PedidoSalidaDTO InsertPedido(PedidoEntradaDTO pPedidoEntradaDTO);
 
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "/EventoInsert", ResponseFormat = WebMessageFormat.Json)]
+        PedidoSalidaDTO InsertEvento(PedidoEntradaDTO pPedidoEntradaDTO);
+
     }
 }

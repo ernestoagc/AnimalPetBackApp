@@ -13,6 +13,9 @@ namespace DataTransferObject
         [DataMember(IsRequired = true)]
         public int idServicio { get; set; }
 
+        [DataMember(EmitDefaultValue = false, IsRequired = false)]
+        public int idEvento { get; set; }
+
         [DataMember(IsRequired = true)]
         public string servicioCodigo { get; set; }
 

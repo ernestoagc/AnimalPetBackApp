@@ -15,6 +15,7 @@ namespace Helper
             parametroDTO.valor = valorBE.valor;
             parametroDTO.listaCodigo = valorBE.listaCodigo;
             parametroDTO.listaNombre = valorBE.listaNombre;
+            parametroDTO.id = valorBE.id;
             return parametroDTO;
         }
 
@@ -29,6 +30,7 @@ namespace Helper
                     parametroDTO.valor = valorBE.valor;
                     parametroDTO.listaCodigo = valorBE.listaCodigo;
                     parametroDTO.listaNombre = valorBE.listaNombre;
+                    parametroDTO.id = valorBE.id;
                     resultado.Add(parametroDTO);
                 }
             }
@@ -57,6 +59,7 @@ namespace Helper
             ServicioDTO servicioDTO = new ServicioDTO();
             servicioDTO.idServicio = pServicioBE.id;
             servicioDTO.costo = pServicioBE.costo;
+            servicioDTO.idEvento = pServicioBE.idEvento;
             servicioDTO.servicioCodigo = pServicioBE.codigo;
             servicioDTO.servicioNombre = pServicioBE.nombre;
             servicioDTO.estadoEventoCodigo = pServicioBE.estadoEventoCodigo;

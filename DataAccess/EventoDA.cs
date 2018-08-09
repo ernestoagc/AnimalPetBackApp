@@ -21,6 +21,21 @@ namespace DataAccess
         }
 
 
+        public EventoBE Update(EventoBE pEventoBE)
+        {
+
+            using (dbVeterinariaEntities oModelo = new dbVeterinariaEntities())
+            {
+                var obj = (from elem in oModelo.EVENTO where elem.ID.Equals(pEventoBE.id) select elem).FirstOrDefault();
+
+                obj.ESTADO_VAL = pEventoBE.estado;
+
+
+                oModelo.SaveChanges();
+            }
+            return pEventoBE;
+        }
+
         public EventoBE insert(EventoBE pEventoBE)
         {
 

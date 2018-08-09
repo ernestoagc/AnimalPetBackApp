@@ -12,6 +12,7 @@ namespace DataTransferObject
         public string listaNombre { get; set; }
         public string valor { get; set; }
         public string codigo { get; set; }
+        public int id { get; set; }
 
     }
 }

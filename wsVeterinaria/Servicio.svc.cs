@@ -70,6 +70,19 @@ namespace wsVeterinaria
             return resultado;
         }
 
+        public PedidoSalidaDTO InsertEvento(PedidoEntradaDTO pPedidoEntradaDTO)
+        {
+            PedidoBE pedidoBE = UtilFunction.getPedidoBE(pPedidoEntradaDTO);
+
+            foreach (ServicioDTO servicioDTO in pPedidoEntradaDTO.servicios) {
+                ServicioBE servicioBE = UtilFunction.getServicioBE(servicioDTO);
+
+            }
+
+            PedidoSalidaDTO pedidoSalidaDTO = new PedidoSalidaDTO();
+            return pedidoSalidaDTO;
+        }
+
         public PedidoSalidaDTO InsertPedido(PedidoEntradaDTO pPedidoEntradaDTO)
         {
             PedidoBE pedidoBE = UtilFunction.getPedidoBE(pPedidoEntradaDTO);

@@ -81,5 +81,16 @@ namespace BusinessLogic
             
         }
 
+        public PedidoBE insertEvento(PedidoBE pPedidoBE) {
+
+
+            foreach (ServicioBE pedidoBE in pPedidoBE.servicios) {
+
+            }
+
+            return pPedidoBE;
+        }
+
+        }
     }
 }
