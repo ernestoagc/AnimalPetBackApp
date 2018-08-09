@@ -23,8 +23,8 @@ namespace wsVeterinaria
         List<ServicioDTO> getServicio();
 
         [OperationContract]
-        [WebInvoke(Method = "GET", UriTemplate = "/Pedido?usuario={usuario}&estado={estado}", ResponseFormat = WebMessageFormat.Json)]
-        List<PedidoSalidaDTO> getPedido(string usuario, string estado);
+        [WebInvoke(Method = "GET", UriTemplate = "/Pedido?usuario={usuario}&estado={estado}&pedido={pedido}", ResponseFormat = WebMessageFormat.Json)]
+        List<PedidoSalidaDTO> getPedido(string usuario, string estado, string pedido);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/PedidoInsert", ResponseFormat = WebMessageFormat.Json)]

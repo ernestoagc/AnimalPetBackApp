@@ -66,6 +66,16 @@ namespace DataAccess
                             listado = listado.FindAll(t => t.estadoCodigo.Equals(pCriterio.ESTADO));
                         }
 
+                        if (!string.IsNullOrEmpty(pCriterio.ID_PEDIDO))
+                        {
+                            listado = listado.FindAll(t => t.id.Equals(Convert.ToInt32(pCriterio.ID_PEDIDO)));
+                        }
+
+                        //if (pCriterio.ID_PEDIDO!=0)
+                        //{
+                        //    listado = listado.FindAll(t => t.id.Equals(pCriterio.ID_PEDIDO));
+                        //}
+
                         if (pCriterio.OBTENER_SERVICIOS)
                         {
                             foreach (var obj in listado)

@@ -15,6 +15,8 @@ namespace wsVeterinaria
     // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione Servicio.svc o Servicio.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class Servicio : IServicio
     {
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         ConfiguracionBL configuracionBL = ConfiguracionBL.getConfiguracionBL;
         NegocioBL negocioBL = NegocioBL.getNegocioBL;
 
@@ -27,12 +29,15 @@ namespace wsVeterinaria
             return resultado;
         }
 
-        public List<PedidoSalidaDTO> getPedido(string usuario,string estado)
+        public List<PedidoSalidaDTO> getPedido(string usuario,string estado,string pedido)
         {
             PedidoBE.Criterio criterio = new PedidoBE.Criterio();
             criterio.OBTENER_SERVICIOS = true;
             criterio.USUARIO_CODIGO = usuario;
-
+            criterio.ESTADO = estado;
+            criterio.ID_PEDIDO = pedido;
+            log.Debug("pruebaLOGGG");
+            log.Debug("pruebaINFO");
             List<PedidoSalidaDTO> resultado = new List<PedidoSalidaDTO>();
             List<PedidoBE> listaPedido = negocioBL.get(criterio);
 

@@ -11,6 +11,8 @@ namespace BusinessLogic
 {
    public class NegocioBL
     {
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         EventoDA eventoDA = EventoDA.getEventoDA;
         ValorDA valorDA = ValorDA.getValorDA;
         PedidoDA pedidoDA = PedidoDA.getPedidoDA;
@@ -60,8 +62,22 @@ namespace BusinessLogic
         }
 
         public List<PedidoBE> get(PedidoBE.Criterio pCriterio) {
-            return pedidoDA.Get(pCriterio);
 
+            if (pCriterio != null) {
+                if (!string.IsNullOrEmpty(pCriterio.USUARIO_CODIGO)) {
+                    log.Info("Solicitando pedidos de: "+ pCriterio.USUARIO_CODIGO);
+                }
+                if (!string.IsNullOrEmpty(pCriterio.ID_PEDIDO)){
+                    log.Info("Solicitando los eventos del pedido: " + pCriterio.ID_PEDIDO);
+                }
+
+
+            }
+
+            List < PedidoBE > resultado= pedidoDA.Get(pCriterio);
+
+            return resultado;
+            
         }
 
     }
