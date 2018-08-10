@@ -50,6 +50,8 @@ namespace DataTransferObject
         [DataMember(IsRequired = false)]
         public DateTime fecha { get; set; }
 
+        [DataMember(IsRequired = false, EmitDefaultValue = false)]
+        public string fechaString { get; set; }
 
         [DataMember(IsRequired = false, EmitDefaultValue = false)]
         public List<ServicioDTO> servicios { get; set; }

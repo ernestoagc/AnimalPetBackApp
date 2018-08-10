@@ -31,6 +31,11 @@ namespace DataTransferObject
         [DataMember(EmitDefaultValue = false,IsRequired =false)]
         public DateTime? fecha {get;set;}
 
+        [DataMember(EmitDefaultValue = false, IsRequired = false)]
+        public string fechaString { get; set; }
+
+
+
 
         [DataMember(IsRequired = false, EmitDefaultValue = false)]
         public string estadoEventoCodigo { get; set; }

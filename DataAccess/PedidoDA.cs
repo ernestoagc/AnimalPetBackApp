@@ -85,17 +85,18 @@ namespace DataAccess
                                 var ltsDetalle = (from elem in db.PEDIDO_SERVICIO
                                                   join ser in db.SERVICIO on elem.SERVICIO equals ser.ID
                                                   join eve in db.EVENTO on elem.ID equals eve.PEDIDO_SERVICIO
-                                                  where elem.PEDIDO.CompareTo(obj.id)==0
+                                                  where elem.PEDIDO.CompareTo(obj.id) == 0
                                                   select new ServicioBE()
                                                   {
-                                                      estadoEventoNombre =eve.VALOR.VALOR1,
-                                                      estadoEventoCodigo=eve.VALOR.CODIGO,
-                                                      nombre=ser.NOMBRE,
-                                                      costo=ser.COSTO,
-                                                      codigo=ser.CODIGO     ,
+                                                      estadoEventoNombre = eve.VALOR.VALOR1,
+                                                      estadoEventoCodigo = eve.VALOR.CODIGO,
+                                                      nombre = ser.NOMBRE,
+                                                      costo = ser.COSTO,
+                                                      codigo = ser.CODIGO,
                                                       fechaEvento = eve.FECHA,
-                                                      id=ser.ID,
-                                                      idPedidoServicio = eve.PEDIDO_SERVICIO
+                                                      id = ser.ID,
+                                                      idPedidoServicio = eve.PEDIDO_SERVICIO,
+                                                      fechaEventoString = eve.FECHA.ToString()
 
 
                                                   });

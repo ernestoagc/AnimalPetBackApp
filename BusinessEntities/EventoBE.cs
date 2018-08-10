@@ -14,6 +14,7 @@ namespace BusinessEntities
         public string estadoCodigo { get; set; }
         string estadoNombre { get; set; }
         public DateTime fecha { get; set; }
+        public string fechaString { get; set; }
 
     }
 }

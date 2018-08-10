@@ -1,0 +1,91 @@
+commit 7a99760f7b3db45850b117f78cf488e1e170f4d2
+Author: Evelyn Galarza <galarza.evelyn@gmail.com>
+Date:   Fri Aug 10 15:14:09 2018 -0500
+
+    [#159602451],[#159602591] modificando la informacion que se va a mostrar en el log del aplicativo.
+
+commit 2b5f46f5a5bcc71edcff83bb49b14cb1fcc4159e
+Author: Evelyn Galarza <galarza.evelyn@gmail.com>
+Date:   Thu Aug 9 17:09:43 2018 -0500
+
+     [#159602451],[#159602591] creando el objeto de salida luego de crear un pedido y el objeto de salida al agregar un nuevo evento(tracking)
+
+commit c6ba5e33f6533f59645449299356b4c05d27b4f7
+Author: Evelyn Galarza <galarza.evelyn@gmail.com>
+Date:   Thu Aug 9 15:58:00 2018 -0500
+
+    [#159602451] agregando el registro de pedido por servicio
+
+commit 8cee594bb83612bd6554e6e2436fbd6db8451051
+Author: Evelyn Galarza <galarza.evelyn@gmail.com>
+Date:   Thu Aug 9 13:59:53 2018 -0500
+
+     [#159602451],[#159602591] modificando el servicio de parametria
+
+commit bd41ee1cbc80f4207c7d3aa972afc7a986616d49
+Merge: ec5cf05 b0a0c08
+Author: Ernesto Galarza <ernestoagc87@gmail.com>
+Date:   Thu Aug 9 01:16:06 2018 -0500
+
+    Merge branch 'master' of https://github.com/ernestoagc/AnimalPetBackApp
+
+commit ec5cf050206033d0dc5996daa7d7b3cc350ab940
+Author: Ernesto Galarza <ernestoagc87@gmail.com>
+Date:   Thu Aug 9 01:15:42 2018 -0500
+
+    [#159602451],[#159602591] subiendo configuracion de log4net
+
+commit b0a0c0872284992d0458733c98f2dd3de6714482
+Author: Carlos Diaz Huiza <cdiazhuiza@gmail.com>
+Date:   Wed Aug 8 17:43:27 2018 -0500
+
+    [#159602451] Actualizacion en logica de envio de pedidos
+
+commit 1d1e42da3a8660299f38d07c3df5cf86ce356496
+Author: Carlos Diaz Huiza <cdiazhuiza@gmail.com>
+Date:   Wed Aug 8 17:30:54 2018 -0500
+
+    [#159602591] incio tarea
+
+commit 28cc42e500636a8d4e340239681e3b38385f7da7
+Author: Carlos Diaz Huiza <cdiazhuiza@gmail.com>
+Date:   Wed Aug 8 17:28:27 2018 -0500
+
+    [#159602401] hola
+
+commit 7bcc2682e5a61cef9a6388b45bdf72c15dfd2b25
+Author: Carlos Diaz Huiza <cdiazhuiza@gmail.com>
+Date:   Wed Aug 8 17:26:35 2018 -0500
+
+    [#159602401] Iniciando Mantenimiento de Clientes
+
+commit bf2e9c1749ada7a682c5df3c7a97f0f3449b3bdf
+Merge: c9673b0 00195ce
+Author: Ernesto Galarza <ernestoagc87@gmail.com>
+Date:   Wed Aug 8 16:57:45 2018 -0500
+
+    [159602451][159602591] resolviendo conflictos al subir proyecto de entidades y acceso a datos
+
+commit c9673b07b2c331320d47d145ade223b482c19091
+Author: Ernesto Galarza <ernestoagc87@gmail.com>
+Date:   Wed Aug 8 16:53:05 2018 -0500
+
+    [#159602451],[#159602591] subiendo proyecto de entidades y capa de acceso a datos
+
+commit 00195ce2a0c059d374ad915e602062483d304fbd
+Author: Carlos Diaz Huiza <cdiazhuiza@gmail.com>
+Date:   Wed Aug 8 16:40:33 2018 -0500
+
+    [#159602451] Inicio Tarea
+
+commit 51af8554d1c290be35450da021ccdd0dcb849207
+Author: Ernesto Galarza <ernestoagc87@gmail.com>
+Date:   Mon Aug 6 16:42:10 2018 -0500
+
+    subiendo proyecto de servicio web back
+
+commit 04e65941225970442a84c4251d608ad6b3ff16ea
+Author: ALONSO <ALONSO@DESKTOP-9KHHT4N>
+Date:   Mon Aug 6 16:37:38 2018 -0500
+
+    Agregar .gitignore y .gitattributes.

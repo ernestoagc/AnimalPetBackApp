@@ -51,6 +51,9 @@ namespace Helper
             pedidoSalidaDTO.idPedido = pPedidoBE.id;
             pedidoSalidaDTO.estadoCodigo = pPedidoBE.estadoCodigo;
             pedidoSalidaDTO.estadoNombre = pPedidoBE.estadoNombre;
+
+            if (pedidoSalidaDTO.fecha != null)
+                pedidoSalidaDTO.fechaString = pPedidoBE.fecha.ToString();
             return pedidoSalidaDTO;
 
         }
@@ -65,6 +68,9 @@ namespace Helper
             servicioDTO.estadoEventoCodigo = pServicioBE.estadoEventoCodigo;
             servicioDTO.estadoEventoNombre = pServicioBE.estadoEventoNombre;
             servicioDTO.fecha = pServicioBE.fechaEvento;
+            if(pServicioBE.fechaEvento!=null)
+            servicioDTO.fechaString = pServicioBE.fechaEvento.ToString();
+
             servicioDTO.idPedidoServicio = pServicioBE.idPedidoServicio;
             return servicioDTO;
         }
