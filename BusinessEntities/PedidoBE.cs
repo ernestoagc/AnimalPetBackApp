@@ -27,6 +27,7 @@ namespace BusinessEntities
             public string USUARIO_CODIGO { get; set; }
             public string ESTADO { get; set; }
             public bool OBTENER_SERVICIOS { get; set; }
+            public bool NO_PINTAR { get; set; }
             public string ID_PEDIDO { get; set; }
         }
     }

@@ -46,6 +46,59 @@ namespace DataAccess
             return pPedidoServicioBE;
         }
 
+
+        public List<PedidoServicioBE> get(PedidoServicioBE.Criterio pCriterio)
+        {
+            try
+            {
+                List<PedidoServicioBE> listado = new List<PedidoServicioBE>();
+                using (dbVeterinariaEntities db = new dbVeterinariaEntities())
+                {
+                    var lstQuery = (from elem in db.PEDIDO_SERVICIO
+                                    join ser in db.SERVICIO on elem.SERVICIO equals ser.ID
+                                    select new PedidoServicioBE()
+                                    {
+                                        id = elem.ID,
+                                        idPedido=elem.PEDIDO,
+                                        idServicio=ser.ID,
+                                        servicioNombre=ser.NOMBRE,
+                                        servicioCodigo=ser.CODIGO
+
+                                    }).ToList();
+
+                    if (lstQuery != null)
+                    {
+                        listado.AddRange(lstQuery.ToList());
+                    }
+
+                }
+
+
+                if (pCriterio != null)
+                {
+
+
+                    if (pCriterio.SERVICIO != 0)
+                    {
+                        listado = listado.FindAll(t => t.idServicio.Equals(pCriterio.SERVICIO));
+                    }
+
+                    if (pCriterio.ID != 0)
+                    {
+                        listado = listado.FindAll(t => t.id.Equals(pCriterio.ID));
+                    }
+
+                }
+
+
+                return listado;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
     }
 
 }

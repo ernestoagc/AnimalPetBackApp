@@ -97,6 +97,7 @@
     <Compile Include="USUARIO.cs">
       <DependentUpon>ModeloVeterinaria.tt</DependentUpon>
     </Compile>
+    <Compile Include="UsuarioDA.cs" />
     <Compile Include="VALOR.cs">
       <DependentUpon>ModeloVeterinaria.tt</DependentUpon>
     </Compile>

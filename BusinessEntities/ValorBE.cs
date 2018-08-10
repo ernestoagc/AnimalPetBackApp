@@ -19,6 +19,7 @@ namespace BusinessEntities
         public class Criterio {
             public string LISTA_CODIGO { get; set; }
             public string CODIGO { get; set; }
+            public int ID { get; set; }
         }
 
     }

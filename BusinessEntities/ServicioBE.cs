@@ -21,6 +21,7 @@ namespace BusinessEntities
 
         public class Criterio {
             public string CODIGO { get; set; }
+            public int ID { get; set; }
         }
     }
 }

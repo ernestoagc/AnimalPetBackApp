@@ -36,8 +36,7 @@ namespace wsVeterinaria
             criterio.USUARIO_CODIGO = usuario;
             criterio.ESTADO = estado;
             criterio.ID_PEDIDO = pedido;
-            log.Debug("pruebaLOGGG");
-            log.Debug("pruebaINFO");
+
             List<PedidoSalidaDTO> resultado = new List<PedidoSalidaDTO>();
             List<PedidoBE> listaPedido = negocioBL.get(criterio);
 
@@ -84,7 +83,7 @@ namespace wsVeterinaria
             }
 
 
-           List<EventoBE> listaEvento= negocioBL.insertEvento(listaPedidoServicioBE);
+           List<EventoBE> listaEvento= negocioBL.insertEvento(pedidoBE,listaPedidoServicioBE);
 
             PedidoSalidaDTO pedidoSalidaDTO = new PedidoSalidaDTO();
 
@@ -118,7 +117,7 @@ namespace wsVeterinaria
 
             pedidoBE= negocioBL.insert(pedidoBE, listaPedidoServicioBE);
             PedidoSalidaDTO pedidoSalidaDTO = new PedidoSalidaDTO();
-            List<PedidoBE> listaPedido = negocioBL.get(new PedidoBE.Criterio() { ID_PEDIDO= pedidoBE.id.ToString(),OBTENER_SERVICIOS=true} );
+            List<PedidoBE> listaPedido = negocioBL.get(new PedidoBE.Criterio() {NO_PINTAR=true, ID_PEDIDO= pedidoBE.id.ToString(),OBTENER_SERVICIOS=true} );
 
             if (listaPedido != null && listaPedido.Count > 0) {
                 PedidoBE pedidoAuxBE = listaPedido[0];

@@ -13,6 +13,11 @@ namespace BusinessEntities
         public int idEstadoEvento { get; set; }
         public int idServicio { get; set; }
         public decimal costo { get; set; }
-
+        public string servicioNombre { get; set; }
+        public string servicioCodigo { get; set; }
+        public class Criterio {
+            public int SERVICIO { get; set; }
+            public int ID { get; set; }
+        }
     }
 }

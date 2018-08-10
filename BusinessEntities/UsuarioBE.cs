@@ -17,5 +17,9 @@ namespace BusinessEntities
         public string perfilCodigo { get; set; }
         public string perfilNombre { get; set; }
 
+        public class Criterio {
+            public string USUARIO { get; set; }
+            public int ID { get; set; }
+        }
     }
 }

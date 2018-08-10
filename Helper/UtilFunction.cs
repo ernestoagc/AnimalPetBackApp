@@ -77,6 +77,7 @@ namespace Helper
             pedidoBE.fecha = pPedidoEntradaDTO.fecha;
             pedidoBE.latitud = pPedidoEntradaDTO.latitud;
             pedidoBE.longitud = pPedidoEntradaDTO.longitud;
+            pedidoBE.id = pPedidoEntradaDTO.idPedido;
             pedidoBE.direccion = pPedidoEntradaDTO.direccion;
             //pedidoBE.servicios = new List<ServicioBE>();
             return pedidoBE;

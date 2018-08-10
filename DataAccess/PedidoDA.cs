@@ -33,7 +33,7 @@ namespace DataAccess
                                         select new PedidoBE()
                                         {
                                             id = elem.ID,
-                                            estadoCodigo = elem.VALOR.VALOR1,
+                                            estadoCodigo = elem.VALOR.CODIGO,
                                             estadoNombre = elem.VALOR.NOMBRE,
                                             fecha = elem.FECHA,
                                             direccion=elem.DIRECCION,

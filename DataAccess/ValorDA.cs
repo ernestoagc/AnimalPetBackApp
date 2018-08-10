@@ -59,6 +59,12 @@ namespace DataAccess
                     {
                         listado = listado.FindAll(t => t.codigo.Equals(pCriterio.CODIGO));
                     }
+
+
+                    if (pCriterio.ID != 0)
+                    {
+                        listado = listado.FindAll(t => t.id.Equals(pCriterio.ID));
+                    }
                 }
 
 

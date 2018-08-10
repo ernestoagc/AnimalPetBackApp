@@ -4,35 +4,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BusinessEntities;
+
 namespace DataAccess
 {
-    public class ServicioDA
+    public class UsuarioDA
     {
-        private static ServicioDA instanciaServicioDA = null;
-        public static ServicioDA getServicioDA
+
+        private static UsuarioDA instanciaUsuarioDA = null;
+        public static UsuarioDA getUsuarioDA
         {
             get
             {
-                if (instanciaServicioDA == null)
-                    instanciaServicioDA = new ServicioDA();
-                return instanciaServicioDA;
+                if (instanciaUsuarioDA == null)
+                    instanciaUsuarioDA = new UsuarioDA();
+                return instanciaUsuarioDA;
             }
         }
 
-        public List<ServicioBE> get(ServicioBE.Criterio pCriterio)
+        public List<UsuarioBE> get(UsuarioBE.Criterio pCriterio)
         {
             try
             {
-                List<ServicioBE> listado = new List<ServicioBE>();
+                List<UsuarioBE> listado = new List<UsuarioBE>();
                 using (dbVeterinariaEntities db = new dbVeterinariaEntities())
                 {
-                    var lstQuery = (from elem in db.SERVICIO
-                                    select new ServicioBE()
+                    var lstQuery = (from elem in db.USUARIO
+                                    select new UsuarioBE()
                                     {
                                         id = elem.ID,
-                                        codigo = elem.CODIGO,
-                                        costo = elem.COSTO,
-                                        nombre = elem.NOMBRE
+                                        usuario = elem.USUARIO1,
+                                        apellidoMaterno = elem.APELLIDO_MATERNO,
+                                        apellidoPaterno = elem.APELLIDO_PATERNO,
+                                        perfilNombre = elem.PERFIL1.NOMBRE
                                     }).ToList();
 
                     if (lstQuery != null)
@@ -45,17 +48,15 @@ namespace DataAccess
 
                 if (pCriterio != null)
                 {
-                    if (!string.IsNullOrEmpty(pCriterio.CODIGO))
+                    if (!string.IsNullOrEmpty(pCriterio.USUARIO))
                     {
-                        listado = listado.FindAll(t => t.codigo.Equals(pCriterio.CODIGO));
+                        listado = listado.FindAll(t => t.usuario.Equals(pCriterio.USUARIO));
                     }
 
-                    if (pCriterio.ID != 0)
+                    if (pCriterio.ID!=0)
                     {
                         listado = listado.FindAll(t => t.id.Equals(pCriterio.ID));
                     }
-
-
                 }
 
 
@@ -66,6 +67,7 @@ namespace DataAccess
                 throw;
             }
         }
+
 
 
     }
